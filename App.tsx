@@ -1,15 +1,15 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import Todo from "./todos/Todo";
+import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import Category from "./category/Category";
 import React from "react";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Typescript!</Text>
-      <Todo />
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.title}>Finance Categories</Text>
+      <Category />
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -17,7 +17,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    paddingTop: 40,
+  },
+  title: {
+    fontSize: 22,
+    fontWeight: "bold",
+    textAlign: "center",
+    marginBottom: 10,
   },
 });
