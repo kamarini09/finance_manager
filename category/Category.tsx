@@ -11,6 +11,7 @@ import { fetchCategories, addCategory, deleteCategory } from "./categoryService"
 //STYLE THE PAGE
 //PUT THE URL IN ENV OR GLOBAL DATA
 //COMMAND TO FIND THE LOCALHOST ifconfig | grep "inet "
+// MAKE XCODE WORK IN MAC
 
 //npx expo start
 
