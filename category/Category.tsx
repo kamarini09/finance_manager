@@ -2,7 +2,7 @@ import { View, Text, TextInput, StyleSheet, Button, FlatList, Alert } from "reac
 import React, { useState } from "react";
 import { CategoryEntity } from "./CategoryEntity";
 
-const API_URL = "http://10.59.130.29:3000/categories";
+const API_URL = "http://192.168.0.102:3000/categories";
 
 const Category: React.FC = () => {
   const [categories, setCategories] = useState<CategoryEntity[]>([]);
