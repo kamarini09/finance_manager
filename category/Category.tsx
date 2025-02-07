@@ -1,8 +1,7 @@
 import { View, Text, TextInput, StyleSheet, Button, FlatList, Alert } from "react-native";
 import React, { useState } from "react";
 import { CategoryEntity } from "./CategoryEntity";
-
-const API_URL = "http://192.168.0.102:3000/categories";
+import { addCategory } from "./categoryService";
 
 const Category: React.FC = () => {
   const [categories, setCategories] = useState<CategoryEntity[]>([]);
@@ -17,25 +16,11 @@ const Category: React.FC = () => {
     }
 
     try {
-      const response = await fetch(API_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ title: categoryName }),
-      });
-      const data = await response.json();
-
-      if (response.ok) {
-        Alert.alert("Success", "Category added successfully!");
-        setCategories([...categories, data]);
-        setCategoryName("");
-      } else {
-        const errorData = await response.json();
-        Alert.alert("Error", errorData.message || "Something went wrong");
-      }
+      const data = await addCategory(categoryName);
+      Alert.alert("Success", "Category added successfully!");
+      setCategories([...categories, data]);
+      setCategoryName("");
     } catch (error) {
-      console.error("Error:", error);
       Alert.alert("Error", "Failed to connect to the server");
     }
   };
