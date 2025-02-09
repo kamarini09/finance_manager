@@ -9,9 +9,9 @@ import { fetchCategories, addCategory, deleteCategory } from "./categoryService"
 //ARE YOU SURE YOU WANT TO DELETE
 //SHOULD I USE UI COMPONENTS?
 //STYLE THE PAGE
-//PUT THE URL IN ENV OR GLOBAL DATA
+//PUT THE URL IN GLOBAL DATA
+
 //COMMAND TO FIND THE LOCALHOST ifconfig | grep "inet "
-// MAKE XCODE WORK IN MAC
 
 //npx expo start
 
