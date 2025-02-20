@@ -1,37 +1,40 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, SafeAreaView } from "react-native";
-import Category from "./category/Category";
+import EntryList from "./screens/EntryList";
+import EntryEdit from "./screens/EntryEdit";
+import EntryDelete from "./screens/EntryDelete";
 import React from "react";
-import { createStaticNavigation } from "@react-navigation/native";
+import { createStaticNavigation, NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-      <Text>Home Screen</Text>
-    </View>
-  );
-}
+export type RootStackParamList = {
+  EntryList: undefined;
+  EntryEdit: undefined;
+  EntryDelete: undefined;
+};
 
-const RootStack = createNativeStackNavigator({
-  screens: {
-    Home: HomeScreen,
-  },
-});
-
-const Navigation = createStaticNavigation(RootStack);
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>Finance Categories</Text>
-      <Category />
-      <StatusBar style="auto" />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="EntryList">
+        <Stack.Screen name="EntryList" component={EntryList} options={{ title: "Entries" }} />
+        <Stack.Screen name="EntryEdit" component={EntryEdit} options={{ title: "Edit Entry" }} />
+        <Stack.Screen name="EntryDelete" component={EntryDelete} options={{ title: "Delete Entry" }} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
+
 // export default function App() {
-//   return <Navigation />;
+//   return (
+//     <SafeAreaView style={styles.container}>
+//       <Text style={styles.title}>Finance Categories</Text>
+//       <Category />
+//       <StatusBar style="auto" />
+//     </SafeAreaView>
+//   );
 // }
 
 const styles = StyleSheet.create({
