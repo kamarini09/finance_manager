@@ -1,11 +1,11 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import StackNavigator from "./StackNavigation";
-import CategoryScreen from "../screens/categoryScreen";
+import NewScreen from "../screens/NewScreen";
 
 export type HomeTabParamList = {
-  Entries: undefined;
-  Categories: undefined;
+  List: undefined;
+  New: undefined;
 };
 
 const Tab = createBottomTabNavigator<HomeTabParamList>();
@@ -13,8 +13,8 @@ const Tab = createBottomTabNavigator<HomeTabParamList>();
 export default function TabNavigator() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Entries" component={StackNavigator} />
-      <Tab.Screen name="Categories" component={CategoryScreen} />
+      <Tab.Screen name="List" component={StackNavigator} />
+      <Tab.Screen name="New" component={NewScreen} />
     </Tab.Navigator>
   );
 }
