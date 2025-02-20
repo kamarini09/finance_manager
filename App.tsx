@@ -19,9 +19,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="EntryList">
-        <Stack.Screen name="EntryList" component={EntryList} options={{ title: "Entries" }} />
-        <Stack.Screen name="EntryEdit" component={EntryEdit} options={{ title: "Edit Entry" }} />
-        <Stack.Screen name="EntryDelete" component={EntryDelete} options={{ title: "Delete Entry" }} />
+        <Stack.Screen name="EntryList" component={EntryList} />
+        <Stack.Screen name="EntryEdit" component={EntryEdit} />
+        <Stack.Screen name="EntryDelete" component={EntryDelete} />
       </Stack.Navigator>
     </NavigationContainer>
   );

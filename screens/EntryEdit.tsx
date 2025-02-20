@@ -18,6 +18,7 @@ export default function EntryEdit() {
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>Entry Edit</Text>
       <Button onPress={() => navigation.navigate("EntryDelete")}>Go to EntryDelete</Button>
+      <Button onPress={() => navigation.goBack()}>Go Back</Button>
     </View>
   );
 }
