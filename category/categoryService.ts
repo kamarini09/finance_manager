@@ -1,4 +1,4 @@
-const API_URL = "http://169.254.218.5:3000/categories";
+const API_URL = "http://10.59.130.49:3000/categories";
 
 // fetch all categories
 export const fetchCategories = async () => {
