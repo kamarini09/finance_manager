@@ -1,7 +1,7 @@
 import { View, Text, TextInput, StyleSheet, Button, FlatList, Alert } from "react-native";
 import React, { useState, useEffect } from "react";
 import { CategoryEntity } from "./CategoryEntity";
-import { fetchCategories, addCategory, deleteCategory } from "./categoryService";
+import { addCategory, deleteCategory, fetchCategories } from "./categoryService";
 
 //TODO
 //YOU SHOULDNT BE ABLE TO ADD TWO TIMES THE SAME CATEGORY NAME

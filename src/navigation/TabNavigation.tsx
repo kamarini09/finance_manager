@@ -1,21 +1,19 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import StackNavigator from "./StackNavigation";
-import NewScreen from "../screens/NewScreen";
-import Category from "../category/Category";
+import EntriesStack from "./EntriesStack";
+import ProfileScreen from "../screens/ProfileScreen";
+import CategoriesStack from "./CategoriesStack";
 
-export type HomeTabParamList = {
-  Entries: undefined;
-  Categories: undefined;
-};
+const Tab = createBottomTabNavigator();
 
-const Tab = createBottomTabNavigator<HomeTabParamList>();
-
-export default function TabNavigator() {
+const TabNavigation = () => {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Entries" component={StackNavigator} />
-      <Tab.Screen name="Categories" component={Category} />
+      <Tab.Screen name="Entries" component={EntriesStack} />
+      <Tab.Screen name="Categories" component={CategoriesStack} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
   );
-}
+};
+
+export default TabNavigation;
